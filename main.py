@@ -6,11 +6,11 @@ COUNT = 64
 PIN   = 12
 FREQ  = 800000
 DMA   = 10
-BRIGHTNESS = 50
 INVERT = False
+BRIGHTNESS = 100
 CHANNEL = 0
 
-strip = PixelStrip(COUNT, PIN, FREQ, DMA, BRIGHTNESS, INVERT, CHANNEL)
+strip = PixelStrip(COUNT, PIN, FREQ, DMA, INVERT, BRIGHTNESS, CHANNEL)
 strip.begin()
 
 def color(strip, color):
@@ -45,12 +45,12 @@ for guess_number in range(1,11):
     print("Your guess is a little high. Try again.")
   else:
     break
-  color(strip, Color(255, 0, 0))
+  color(strip, Color(150, 50, 20))
 
 if user_guess == my_number:
   color(strip, Color(0, 255, 0))
   print("You won, " + name + "! You guessed my number in " + str(guess_number) + " guesses.")
-  print("Your guesses were: " + " ".join(str(x) for i in guess))
+  print("Your guesses were: " + " ".join(str(x) for x in guess))
   time.sleep(4)
   color(strip, Color(0,0,0))
 else:
